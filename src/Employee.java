@@ -26,6 +26,10 @@ public class Employee {
         return this.salary;
     }
 
+    public static int getCounter() {
+        return counter;
+    }
+
     public int getId() {
         return this.id;
     }
@@ -37,6 +41,7 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
 
     @Override
     public int hashCode() {
