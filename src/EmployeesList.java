@@ -17,6 +17,7 @@ public class EmployeesList {
         findMinSalary(employees);
         findMaxSalary(employees);
         nameOfEmployees(employees);
+        averageSalary(employees);
     }
 
     public static void informationForAllEmployees(Employee[] employees) {
@@ -34,7 +35,6 @@ public class EmployeesList {
         }
         System.out.println("Сумма затрат на зарплаты в месяц составила - " + sum);
         System.out.println("---------------");
-        averageSalary(sum);
     }
 
     public static void findMinSalary(Employee[] employees) {
@@ -62,7 +62,12 @@ public class EmployeesList {
         System.out.println("---------------");
     }
 
-    public static void averageSalary(int sum) {
+    public static void averageSalary(Employee[] employees) {
+        int sum = 0;
+        for (Employee employee : employees) {
+            sum += employee.getSalary();
+        }
+
         int average = sum / Employee.getCounter();
         System.out.println("Среднее значение зарплат - " + average);
         System.out.println("---------------");
